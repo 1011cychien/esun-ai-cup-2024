@@ -1,0 +1,1 @@
+Link of embeddings_insurance.pt: https://drive.google.com/file/d/1j_9Ylukm60NCW7IUrwNHx0mJMEnc5d2_/view?usp=drive_link
