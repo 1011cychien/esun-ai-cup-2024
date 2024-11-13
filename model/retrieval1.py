@@ -73,7 +73,7 @@ class EnhancedDocumentRetriever:
         self.corpus_data = {}
         
         for category in ['insurance', 'finance', 'faq']:
-            corpus_texts = self._load_single_corpus(category)
+            corpus_texts = self.preprocessor._load_single_corpus(category)
 
             if corpus_texts:
                 self.corpus_data[category] = {
@@ -136,9 +136,9 @@ class EnhancedDocumentRetriever:
         dense_scores = np.dot(filtered_embeddings, query_embedding)
         
         # 2. Sparse retrieval (BM25)
-        tokenized_corpus = [self._tokenize_for_tfidf(text) for text in filtered_texts]
+        tokenized_corpus = [self.preprocessor._tokenize_for_tfidf(text) for text in filtered_texts]
         bm25 = BM25Okapi(tokenized_corpus)
-        query_tokens = self._tokenize_for_tfidf(query)
+        query_tokens = self.preprocessor._tokenize_for_tfidf(query)
         sparse_scores = bm25.get_scores(query_tokens)
         
         # Normalize scores
