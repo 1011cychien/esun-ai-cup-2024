@@ -1,0 +1,4 @@
+python-dotenv
+llama-parse
+llama-index
+pandas
