@@ -74,7 +74,8 @@ Prerequisites: running both models to generate two predictions
 
 ```bash
 mv <version-1-output> predictions1.json
-mv <version-2-output> predictions2.json
+mv <version-2-faq-output> predictions2_faq.json
+mv <version-2-finance-output> predictions2_finance.json
 python main.py
 ```
 
